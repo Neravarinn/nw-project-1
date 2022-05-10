@@ -49,11 +49,11 @@ function mainScript(event) {
     allData.push(engine(longShear.value))
 
     let cases = {
-        0: 'Short mission momemt',
+        0: 'Short mission moment',
         1: 'Short mission shear',
-        2: 'Medium mission momemt',
+        2: 'Medium mission moment',
         3: 'Medium mission shear',
-        4: 'Long mission momemt',
+        4: 'Long mission moment',
         5: 'Long mission shear',
     }
 
