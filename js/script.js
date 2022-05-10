@@ -12,17 +12,32 @@ const longShear = document.querySelector('.input__longShear')
 const outputMax = document.querySelector('.output__outputMax')
 
 runButton.addEventListener('click', mainScript)
+
 const OneCheck = document.querySelector('#one')
 const MaxCheck = document.querySelector('#Max')
 
 const El = document.querySelector('#El')
 
 const radio = document.querySelector('.set__switch')
-radio.addEventListener('click', () =>
-    OneCheck.checked ? (El.readOnly = false) : (El.readOnly = true)
+radio.addEventListener(
+    'click',
+    () => {
+        if (OneCheck.checked) El.readOnly = false
+        else {
+            El.value = ''
+            El.readOnly = true
+        }
+    }
+
+    //OneCheck.checked ? (El.readOnly = false) : (El.readOnly = true)
 )
 
 function mainScript(event) {
+    if (OneCheck.checked == true && El.value == '') {
+        window.alert('Input Element number and than click Run')
+        return
+    }
+
     event.preventDefault()
 
     var allData = []
@@ -54,6 +69,18 @@ function mainScript(event) {
         maxAmpCaseD,
         dataMax,
         dataAmp
+
+    var maxfmaxY,
+        maxCaseY,
+        maxCaseDY,
+        ampY,
+        maxAmpCaseY,
+        maxAmpElemY,
+        maxAmpCaseDY,
+        dataMaxY,
+        dataAmpY
+
+    var type
 
     if (OneCheck.checked) {
         for (let m = 0; m < allData.length; m++) {
@@ -90,6 +117,7 @@ function mainScript(event) {
                         }
                     }
                 } else if (allData[m][l].type == '2') {
+                    type = 2
                     if (allData[m][l].number == exectElem) {
                         if (m == 0) {
                             maxCase = m
@@ -117,6 +145,34 @@ function mainScript(event) {
 
                             dataAmp = allData[m][l].data
                         }
+                        //Y
+
+                        if (m == 0) {
+                            maxCaseY = m
+                            maxfmaxY = Number(allData[m][l].fmaxY)
+                            ampY =
+                                Number(allData[m][l].fmaxY) -
+                                Number(allData[m][l].fminY)
+                            maxAmpCaseY = m
+                            dataMaxY = allData[m][l].data
+                            dataAmpY = allData[m][l].data
+                        } else if (maxfmaxY <= Number(allData[m][l].fmaxY)) {
+                            maxCaseY = m
+                            maxfmaxY = Number(allData[m][l].fmaxY)
+                            dataMaxY = allData[m][l].data
+                        }
+                        if (
+                            ampY <=
+                            Number(allData[m][l].fmaxY) -
+                                Number(allData[m][l].fminY)
+                        ) {
+                            maxAmpCaseY = m
+                            ampY =
+                                Number(allData[m][l].fmaxY) -
+                                Number(allData[m][l].fminY)
+
+                            dataAmpY = allData[m][l].data
+                        }
                     }
                 }
             }
@@ -125,6 +181,10 @@ function mainScript(event) {
         for (let key in cases) {
             if (Number(key) == maxCase) maxCaseD = cases[key]
             if (Number(key) == maxAmpCase) maxAmpCaseD = cases[key]
+            //Y
+
+            if (Number(key) == maxCaseY) maxCaseDY = cases[key]
+            if (Number(key) == maxAmpCaseY) maxAmpCaseDY = cases[key]
         }
 
         if (maxCase == maxAmpCase)
@@ -141,7 +201,7 @@ function mainScript(event) {
                 dataAmp
         else
             outputMax.value =
-                '\tHi user! \u{1F590}	\n\n\tThe most critical element is: ' +
+                '\tHi user! \u{1F590}	\n\n\tThe most critical element for fx direction is: ' +
                 exectElem +
                 ', Fmax = ' +
                 maxfmax +
@@ -159,6 +219,38 @@ function mainScript(event) {
                 maxAmpCaseD +
                 ' load set.\n\n' +
                 dataAmp
+        //Y
+        if (type == 2) {
+            if (maxCaseY == maxAmpCaseY)
+                outputMax.value +=
+                    '\n\n\tThe most critical element for fy direction is: ' +
+                    exectElem +
+                    ', Fmax = ' +
+                    maxfmaxY +
+                    ' ksi in ' +
+                    maxCaseDY +
+                    ' load set.\n\n' +
+                    dataAmpY
+            else
+                outputMax.value +=
+                    '\n\n\tThe most critical element for fy direction is: ' +
+                    exectElem +
+                    ', Fmax = ' +
+                    maxfmaxY +
+                    ' ksi in ' +
+                    maxCaseDY +
+                    ' load case.\n\n' +
+                    topPart +
+                    dataMaxY +
+                    '\n\n\tAlso, the element : ' +
+                    exectElem +
+                    ', has maximum amplitude Amax = ' +
+                    ampY +
+                    ' ksi in ' +
+                    maxAmpCaseDY +
+                    ' load set.\n\n' +
+                    dataAmpY
+        }
     } else {
         var maxElem
         for (let m = 0; m < allData.length; m++) {
@@ -193,6 +285,7 @@ function mainScript(event) {
                         dataAmp = allData[m][l].data
                     }
                 } else if (allData[m][l].type == '2') {
+                    type = 2
                     if ((l == 0) & (m == 0)) {
                         maxCase = m
                         maxElem = allData[m][l].number
@@ -222,17 +315,51 @@ function mainScript(event) {
                         maxAmpElem = allData[m][l].number
                         dataAmp = allData[m][l].data
                     }
+
+                    //Y
+                    if ((l == 0) & (m == 0)) {
+                        maxCaseY = m
+                        maxElemY = allData[m][l].number
+                        maxfmaxY = Number(allData[m][l].fmaxY)
+                        ampY =
+                            Number(allData[m][l].fmaxY) -
+                            Number(allData[m][l].fminY)
+                        maxAmpCaseY = m
+                        maxAmpElemY = allData[m][l].number
+                        dataMaxY = allData[m][l].data
+                        dataAmpY = allData[m][l].data
+                    } else if (maxfmaxY <= Number(allData[m][l].fmaxY)) {
+                        maxCaseY = m
+                        maxElemY = allData[m][l].number
+                        maxfmaxY = Number(allData[m][l].fmaxY)
+                        dataMaxY = allData[m][l].data
+                    }
+                    if (
+                        ampY <=
+                        Number(allData[m][l].fmaxY) -
+                            Number(allData[m][l].fminY)
+                    ) {
+                        maxAmpCaseY = m
+                        ampY =
+                            Number(allData[m][l].fmaxY) -
+                            Number(allData[m][l].fminY)
+                        maxAmpElemY = allData[m][l].number
+                        dataAmpY = allData[m][l].data
+                    }
                 }
             }
         }
         for (let key in cases) {
             if (Number(key) == maxCase) maxCaseD = cases[key]
             if (Number(key) == maxAmpCase) maxAmpCaseD = cases[key]
+            //Y
+            if (Number(key) == maxCaseY) maxCaseDY = cases[key]
+            if (Number(key) == maxAmpCaseY) maxAmpCaseDY = cases[key]
         }
 
-        if (maxCase == maxAmpCase)
+        if (maxCase == maxAmpCase && maxElem == maxAmpElem)
             outputMax.value =
-                '\tHi user! \u{1F590}	\n\n\tThe most critical element is: ' +
+                '\tHi user! \u{1F590}	\n\n\tThe most critical element for fx direction is: ' +
                 maxElem +
                 ', Fmax = ' +
                 maxfmax +
@@ -262,6 +389,37 @@ function mainScript(event) {
                 maxAmpCaseD +
                 ' load set.\n\n' +
                 dataAmp
+
+        if ((type = 2)) {
+            if (maxCaseY == maxAmpCaseY && maxElemY == maxAmpElemY)
+                outputMax.value +=
+                    '\n\n\tThe most critical element for fy direction is: ' +
+                    maxElemY +
+                    ', Fmax = ' +
+                    maxfmaxY +
+                    ' ksi in ' +
+                    maxCaseDY +
+                    ' load set.\n\n' +
+                    dataAmpY
+            else
+                outputMax.value +=
+                    '\n\n\tThe most critical element for fy direction is: ' +
+                    maxElemY +
+                    ', Fmax = ' +
+                    maxfmaxY +
+                    ' ksi in ' +
+                    maxCaseDY +
+                    ' load case.\n\n' +
+                    dataMaxY +
+                    '\n\n\tAlso, the element : ' +
+                    maxAmpElemY +
+                    ', has maximum amplitude Amax = ' +
+                    ampY +
+                    ' ksi in ' +
+                    maxAmpCaseDY +
+                    ' load set.\n\n' +
+                    dataAmpY
+        }
     }
 }
 var topPart, topp
@@ -354,7 +512,7 @@ function engine(inputString) {
                 if (k == 1) {
                     fmin = sPart
                         .split('')
-                        .splice(72 + 150 * i, 5)
+                        .splice(71 + 150 * i, 6)
                         .filter((elem) => elem !== ' ')
                         .join('')
 
@@ -404,7 +562,7 @@ function engine(inputString) {
                     if (k == 1) {
                         fmin = sPart
                             .split('')
-                            .splice(72 + 150 * (i + j), 5)
+                            .splice(71 + 150 * (i + j), 6)
                             .filter((elem) => elem !== ' ')
                             .join('')
 
