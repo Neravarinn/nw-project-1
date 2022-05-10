@@ -1,0 +1,337 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@200;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Noto+Sans:wght@200;400;700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+:focus,
+:active {
+  outline: none;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+body {
+  background-image: url(https://img.freepik.com/free-vector/abstract-gear-wheel-mechanism-background_41981-1136.jpg?w=2000);
+}
+
+.input__long, .input__mid, .input__short, .input__discr, .set__inputBlock input, .set__inputText, .set__maxOfAll label, .set__oneElem label {
+  font-family: "Noto Sans", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.wrapper {
+  min-height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(216, 218, 218);
+  max-width: 1500px;
+  margin: 0px auto;
+}
+
+.header {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #000000;
+}
+.header__row {
+  margin: 10px 0 0 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+.header__body {
+  margin: 55px 0 0 0;
+}
+.header__text {
+  font-family: "Noto Sans", sans-serif;
+  font-size: 50px;
+  line-height: 50px;
+  font-weight: 400;
+}
+
+.content {
+  padding: 30px 0 0 0;
+}
+
+.set {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #000000;
+}
+.set h1 {
+  margin-bottom: 10px;
+  align-self: center;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 40px;
+  line-height: 50px;
+  font-weight: 400;
+}
+.set__row {
+  display: flex;
+  justify-content: space-around;
+}
+.set__oneElem {
+  display: flex;
+  justify-content: space-between;
+}
+.set__oneElem label {
+  margin: 0 15px 10px 0;
+}
+.set__oneElem input {
+  width: 15px;
+  height: 15px;
+}
+.set__maxOfAll {
+  display: flex;
+  justify-content: space-between;
+}
+.set__maxOfAll label {
+  margin: 0 15px 10px 0;
+}
+.set__maxOfAll input {
+  width: 15px;
+  height: 15px;
+}
+.set__inputText {
+  margin: 0 0px 5px 0;
+}
+.set__inputBlock input {
+  width: 170px;
+  height: 30px;
+  background-color: #ffffff;
+  border: 1px solid #535151;
+  border-radius: 3px;
+  padding: 5px 5px 5px 5px;
+}
+.set__inputBlock input::-moz-placeholder {
+  opacity: 0.5;
+}
+.set__inputBlock input:-ms-input-placeholder {
+  opacity: 0.5;
+}
+.set__inputBlock input::placeholder {
+  opacity: 0.5;
+}
+
+.input {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #000000;
+}
+.input h1 {
+  margin-bottom: 10px;
+  align-self: center;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 40px;
+  line-height: 50px;
+  font-weight: 400;
+}
+.input__row {
+  display: flex;
+  justify-content: center;
+}
+.input__discr {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-right: 20px;
+}
+.input__short {
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px;
+}
+.input__head {
+  margin-bottom: 5px;
+}
+.input__shortMom {
+  margin-bottom: 10px;
+  font-family: "Courier Prime", monospace;
+}
+.input__shortShear {
+  font-family: "Courier Prime", monospace;
+}
+.input__mid {
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px;
+}
+.input__midMom {
+  margin-bottom: 10px;
+  font-family: "Courier Prime", monospace;
+}
+.input__midShear {
+  font-family: "Courier Prime", monospace;
+}
+.input__long {
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px;
+}
+.input__longMom {
+  margin-bottom: 10px;
+  font-family: "Courier Prime", monospace;
+}
+.input__longShear {
+  font-family: "Courier Prime", monospace;
+}
+
+.output__row {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+}
+.output__run {
+  margin-bottom: 50px;
+}
+.output__run .button {
+  position: relative;
+  background-color: black;
+  border-radius: 4em;
+  font-size: 26px;
+  color: white;
+  padding: 0.8em 1.8em;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition-duration: 0.4s;
+  -webkit-transition-duration: 0.4s;
+  /* Safari */
+}
+.output__run .button:hover {
+  transition-duration: 0.1s;
+  background-color: #3a3a3a;
+}
+.output__run .button:after {
+  content: "";
+  display: block;
+  position: absolute;
+  border-radius: 4em;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: all 0.5s;
+  box-shadow: 0 0 10px 40px white;
+}
+.output__run .button:active:after {
+  box-shadow: 0 0 0 0 white;
+  position: absolute;
+  border-radius: 4em;
+  left: 0;
+  top: 0;
+  opacity: 1;
+  transition: 0s;
+}
+.output__run .button:active {
+  top: 1px;
+}
+.output__head {
+  margin-bottom: 5px;
+}
+.output__head p {
+  margin-bottom: 10px;
+  align-self: center;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 40px;
+  line-height: 50px;
+  font-weight: 400;
+}
+.output__outputMax {
+  resize: none;
+  font-family: "Courier Prime", monospace;
+}
+
+.info {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+}/*# sourceMappingURL=style.css.map */

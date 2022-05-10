@@ -1,0 +1,476 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@200;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Noto+Sans:wght@200;400;700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+*,
+*:before,
+*:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+:focus,
+:active {
+    outline: none;
+}
+a:focus,
+a:active {
+    outline: none;
+}
+nav,
+footer,
+header,
+aside {
+    display: block;
+}
+html,
+body {
+    height: 100%;
+    width: 100%;
+    font-size: 100%;
+    line-height: 1;
+    font-size: 14px;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+input,
+button,
+textarea {
+    font-family: inherit;
+}
+input::-ms-clear {
+    display: none;
+}
+button {
+    cursor: pointer;
+}
+button::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+}
+a,
+a:visited {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: none;
+}
+ul li {
+    list-style: none;
+}
+img {
+    vertical-align: top;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+body {
+    //font-family: 'Open Sans';
+    background-image: url(https://img.freepik.com/free-vector/abstract-gear-wheel-mechanism-background_41981-1136.jpg?w=2000);
+}
+
+%fontControl {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.wrapper {
+    min-height: 100%;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(216, 218, 218);
+    //justify-content: center;
+
+    max-width: 1500px;
+    margin: 0px auto;
+}
+.header {
+    // .header__row
+    padding-bottom: 10px;
+
+    border-bottom: 1px solid #000000;
+    //border-radius: 3px;
+
+    &__row {
+        margin: 10px 0 0 0;
+        display: flex;
+        //flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+    }
+
+    // .header__logo
+
+    &__logo {
+    }
+
+    // .header__body
+
+    &__body {
+        margin: 55px 0 0 0;
+    }
+
+    // .header__text
+
+    &__text {
+        font-family: 'Noto Sans', sans-serif;
+        font-size: 50px;
+        line-height: 50px;
+        font-weight: 400;
+    }
+}
+.conteiner {
+}
+.content {
+    padding: 30px 0 0 0;
+}
+.container {
+}
+.set {
+    // .set__row
+
+    display: flex;
+    flex-direction: column;
+    //align-items: center;
+    //justify-content: center;
+
+    padding-bottom: 10px;
+
+    border-bottom: 1px solid #000000;
+
+    h1 {
+        margin-bottom: 10px;
+        align-self: center;
+        font-family: 'Noto Sans', sans-serif;
+        font-size: 40px;
+        line-height: 50px;
+        font-weight: 400;
+    }
+
+    &__row {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    // .set__columnOne
+
+    &__columnOne {
+    }
+
+    // .set__switch
+
+    &__switch {
+    }
+
+    // .set__oneElem
+
+    &__oneElem {
+        display: flex;
+        justify-content: space-between;
+        label {
+            margin: 0 15px 10px 0;
+
+            @extend %fontControl;
+        }
+        input {
+            width: 15px;
+            height: 15px;
+        }
+    }
+
+    // .set__maxOfAll
+
+    &__maxOfAll {
+        display: flex;
+        justify-content: space-between;
+        label {
+            margin: 0 15px 10px 0;
+
+            @extend %fontControl;
+        }
+        input {
+            width: 15px;
+            height: 15px;
+        }
+    }
+
+    // .set__columnTwo
+
+    &__columnTwo {
+    }
+
+    // .set__input
+
+    &__input {
+    }
+
+    // .set__inputText
+
+    &__inputText {
+        margin: 0 0px 5px 0;
+
+        @extend %fontControl;
+    }
+
+    // .set__inputBlock
+
+    &__inputBlock {
+        input {
+            width: 170px;
+            height: 30px;
+            background-color: #ffffff;
+            border: 1px solid #535151;
+
+            border-radius: 3px;
+            padding: 5px 5px 5px 5px;
+
+            @extend %fontControl;
+
+            &::placeholder {
+                //color: #ce2525;
+                opacity: 0.5;
+            }
+        }
+    }
+}
+.input {
+    // .input__row
+
+    display: flex;
+    flex-direction: column;
+
+    padding-bottom: 10px;
+
+    border-bottom: 1px solid #000000;
+
+    h1 {
+        margin-bottom: 10px;
+        align-self: center;
+        font-family: 'Noto Sans', sans-serif;
+        font-size: 40px;
+        line-height: 50px;
+        font-weight: 400;
+    }
+
+    &__row {
+        display: flex;
+        justify-content: center;
+    }
+
+    // .input__discr
+
+    &__discr {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        margin-right: 20px;
+        @extend %fontControl;
+    }
+
+    // .input__head
+
+    &__head {
+    }
+
+    // .input__mom
+
+    &__mom {
+    }
+
+    // .input__shear
+
+    &__shear {
+    }
+
+    // .input__short
+
+    &__short {
+        display: flex;
+        flex-direction: column;
+        margin-right: 20px;
+        @extend %fontControl;
+    }
+
+    &__head {
+        margin-bottom: 5px;
+    }
+
+    // .input__shortMom
+
+    &__shortMom {
+        margin-bottom: 10px;
+        font-family: 'Courier Prime', monospace;
+    }
+
+    // .input__shortShear
+
+    &__shortShear {
+        font-family: 'Courier Prime', monospace;
+    }
+
+    // .input__mid
+
+    &__mid {
+        display: flex;
+        flex-direction: column;
+        margin-right: 20px;
+        @extend %fontControl;
+    }
+
+    // .input__midMom
+
+    &__midMom {
+        margin-bottom: 10px;
+        font-family: 'Courier Prime', monospace;
+    }
+
+    // .input__midShear
+
+    &__midShear {
+        font-family: 'Courier Prime', monospace;
+    }
+
+    // .input__long
+
+    &__long {
+        display: flex;
+        flex-direction: column;
+        margin-right: 20px;
+        @extend %fontControl;
+    }
+
+    // .input__longMom
+
+    &__longMom {
+        margin-bottom: 10px;
+        font-family: 'Courier Prime', monospace;
+    }
+
+    // .input__longShear
+
+    &__longShear {
+        font-family: 'Courier Prime', monospace;
+        // overflow: visible;
+        // overflow-x: scroll;
+    }
+}
+.output {
+    // .output__row
+
+    &__row {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 40px;
+    }
+
+    &__run {
+        .button {
+            position: relative;
+            background-color: black;
+            border-radius: 4em;
+            font-size: 26px;
+            color: white;
+            padding: 0.8em 1.8em;
+            cursor: pointer;
+            user-select: none;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            transition-duration: 0.4s;
+            -webkit-transition-duration: 0.4s; /* Safari */
+        }
+
+        .button:hover {
+            transition-duration: 0.1s;
+            background-color: #3a3a3a;
+        }
+
+        .button:after {
+            content: '';
+            display: block;
+            position: absolute;
+            border-radius: 4em;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: all 0.5s;
+            box-shadow: 0 0 10px 40px white;
+        }
+
+        .button:active:after {
+            box-shadow: 0 0 0 0 white;
+            position: absolute;
+            border-radius: 4em;
+            left: 0;
+            top: 0;
+            opacity: 1;
+            transition: 0s;
+        }
+
+        .button:active {
+            top: 1px;
+        }
+
+        margin-bottom: 50px;
+    }
+
+    // .output__head
+
+    &__head {
+        //@extend %fontControl;
+
+        p {
+            margin-bottom: 10px;
+            align-self: center;
+            font-family: 'Noto Sans', sans-serif;
+            font-size: 40px;
+            line-height: 50px;
+            font-weight: 400;
+        }
+
+        margin-bottom: 5px;
+    }
+
+    // .output__data
+
+    &__data {
+    }
+
+    // .output__outputMax
+
+    &__outputMax {
+        resize: none;
+        font-family: 'Courier Prime', monospace;
+        //font-family: 'Noto Sans', sans-serif;
+
+        // font-size: 40px;
+        // line-height: 50px;
+        // font-weight: 400;
+    }
+}
+.footer {
+}
+.info {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+}
